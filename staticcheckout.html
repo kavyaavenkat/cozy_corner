@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout - The Cozy Corner</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #fdfcfb;
+    }
+
+    .cart-item-img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .checkout-card {
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      padding: 2rem;
+      border-radius: 1rem;
+      background: #fff;
+    }
+
+    .btn-checkout {
+      background-color: #6d4c41;
+      color: white;
+    }
+
+    .btn-checkout:hover {
+      background-color: #5d4037;
+    }
+
+    .cart-item {
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cart-title {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .cart-description {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .total-section {
+      font-weight: 600;
+      font-size: 1.25rem;
+      text-align: end;
+      margin-top: 2rem;
+    }
+
+    footer {
+      background-color: #6d4c41;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 576px) {
+      .cart-item-img {
+        width: 60px;
+        height: 60px;
+      }
+      .cart-title {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top px-4 py-3" style="background-color: #6d4c41;">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="https://marketplace.canva.com/EAFwZMLu0Wc/1/0/1600w/canva-brown-and-white-minimalist-elegant-simple-home-decor-company-logo-onurdR-QAyo.jpg" alt="logo" height="50" class="me-2">
+      <span class="fs-4 fw-bold">The Cozy Corner</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#cozyNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="cozyNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">
+            <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" viewBox="0 0 24 24" class="me-1">
+              <path d="M11 7h2v2h-2zm0 4h2v6h-2z"/>
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 
+              18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+            </svg>
+            About Us
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="products.html">
+            <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" viewBox="0 0 24 24" class="me-1">
+              <path d="M16 6V4H8v2H2v2h2v12h16V8h2V6h-6zM6 18V8h12v10H6z"/>
+            </svg>
+            Products
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="sale.html">
+            <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" viewBox="0 0 24 24" class="me-1">
+              <path d="M21 7H7v2h14V7zM7 13h14v-2H7v2zm0 4h10v-2H7v2zM3 6h2v12H3z"/>
+            </svg>
+            Sale
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="loginLink" href="login.html">
+            <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" viewBox="0 0 24 24" class="me-1">
+              <path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 
+              2c-2.66 0-8 1.34-8 4v2h16v-2c0-2.66-5.34-4-8-4z"/>
+            </svg>
+            Login
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Checkout Section -->
+<main class="container py-5">
+  <section class="checkout-card">
+    <h2 class="text-center mb-4">Shopping Cart</h2>
+
+    <!-- Cart Item 1 -->
+    <div class="row align-items-center cart-item">
+      <div class="col-3 col-md-2">
+        <img src="https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg" class="cart-item-img" alt="Sofa">
+      </div>
+      <div class="col-6 col-md-6">
+        <div class="cart-title">Modern Sofa</div>
+        <div class="cart-description">3-seater with plush velvet fabric</div>
+      </div>
+      <div class="col-3 col-md-2 text-end">Qty: 1</div>
+      <div class="col-12 col-md-2 text-end fw-semibold mt-2 mt-md-0">₹12,000</div>
+    </div>
+
+    <!-- Cart Item 2 -->
+    <div class="row align-items-center cart-item">
+      <div class="col-3 col-md-2">
+        <img src="https://images.pexels.com/photos/6800945/pexels-photo-6800945.jpeg" class="cart-item-img" alt="Chair">
+      </div>
+      <div class="col-6 col-md-6">
+        <div class="cart-title">Wooden Chair</div>
+        <div class="cart-description">Solid oak chair with cushion</div>
+      </div>
+      <div class="col-3 col-md-2 text-end">Qty: 2</div>
+      <div class="col-12 col-md-2 text-end fw-semibold mt-2 mt-md-0">₹6,000</div>
+    </div>
+
+    <div class="row align-items-center cart-item">
+      <div class="col-3 col-md-2">
+        <img src="https://images.pexels.com/photos/3144581/pexels-photo-3144581.jpeg" class="cart-item-img" alt="Dining Table">
+      </div>
+      <div class="col-6 col-md-6">
+        <div class="cart-title">Dining Table</div>
+        <div class="cart-description">6-seater premium teak dining table</div>
+      </div>
+      <div class="col-3 col-md-2 text-end">Qty: 1</div>
+      <div class="col-12 col-md-2 text-end fw-semibold mt-2 mt-md-0">₹20,000</div>
+    </div>
+
+    <div class="row align-items-center cart-item">
+      <div class="col-3 col-md-2">
+        <img src="https://images.pexels.com/photos/17994856/pexels-photo-17994856.jpeg" class="cart-item-img" alt="Lamp">
+      </div>
+      <div class="col-6 col-md-6">
+        <div class="cart-title">Light Lamp</div>
+        <div class="cart-description">Stylish wooden tripod lamp</div>
+      </div>
+      <div class="col-3 col-md-2 text-end">Qty: 1</div>
+      <div class="col-12 col-md-2 text-end fw-semibold mt-2 mt-md-0">₹4,500</div>
+    </div>
+
+    <div class="total-section">Total: ₹42,500</div>
+    <div class="text-center mt-4">
+      <button class="btn btn-checkout px-4 py-2">Proceed to Payment</button>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="text-white pt-5 pb-4" style="background-color: #6d4c41;">
+  <div class="container text-center text-md-start">
+    <div class="row">
+
+      <!-- Brand -->
+      <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mb-4">
+        <h5 class="text-uppercase fw-bold mb-3">The Cozy Corner</h5>
+        <p>Style meets comfort — handpicked furniture to make your house a home.</p>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
+        <h6 class="text-uppercase fw-bold mb-3">Contact</h6>
+        <p>
+          <svg width="18" height="18" fill="currentColor" class="me-2" viewBox="0 0 24 24">
+            <path d="M6.62 10.79a15.464 15.464 0 0 0 6.59 6.59l2.2-2.2a1.003 1.003 0 0 1 
+            1.11-.21c1.21.49 2.53.76 3.88.76.55 0 1 .45 
+            1 1V20a1 1 0 0 1-1 1c-9.39 0-17-7.61-17-17a1 1 0 0 
+            1 1-1h3.5c.55 0 1 .45 1 1 0 1.35.27 2.67.76 
+            3.88a1.003 1.003 0 0 1-.21 1.11l-2.2 2.2z"/>
+          </svg>
+          9876543210
+        </p>
+        <p>
+          <svg width="18" height="18" fill="currentColor" class="me-2" viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 
+            1.1.9 2 2 2h16c1.1 0 2-.9 
+            2-2V6c0-1.1-.9-2-2-2zm0 
+            2v.01L12 13 4 6.01V6h16zM4 
+            18V8l8 5 8-5v10H4z"/>
+          </svg>
+          support@cozycorner.com
+        </p>
+        <p>
+          <svg width="18" height="18" fill="currentColor" class="me-2" viewBox="0 0 24 24">
+            <path d="M12 2C8.13 2 5 5.13 5 
+            9c0 5.25 7 13 7 13s7-7.75 
+            7-13c0-3.87-3.13-7-7-7zm0 
+            9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 
+            6.5 12 6.5 14.5 7.62 14.5 9 13.38 
+            11.5 12 11.5z"/>
+          </svg>
+          Chennai, India
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+        <h6 class="text-uppercase fw-bold mb-3">Quick Links</h6>
+        <p><a href="about.html" class="text-white text-decoration-none">About Us</a></p>
+        <p><a href="products.html" class="text-white text-decoration-none">Products</a></p>
+        <p><a href="sale.html" class="text-white text-decoration-none">Sale</a></p>
+      </div>
+
+      <!-- Social -->
+      <div class="col-md-2 col-lg-3 col-xl-3 mx-auto mb-4">
+        <h6 class="text-uppercase fw-bold mb-3">Follow Us</h6>
+        <a href="#" style="color: #f5eee6; text-decoration: none; display: inline-flex; align-items: center;" aria-label="Instagram">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M7.5 2C4.46 2 2 4.46 2 
+            7.5v9C2 19.54 4.46 22 7.5 
+            22h9c3.04 0 5.5-2.46 
+            5.5-5.5v-9C22 4.46 19.54 
+            2 16.5 2h-9zM12 
+            7.5A4.5 4.5 0 1 1 7.5 12 
+            4.5 4.5 0 0 1 12 
+            7.5zm0 7.5a3 3 0 1 0-3-3 
+            3 3 0 0 0 3 
+            3zm5.25-7.88a1.12 1.12 0 1 0 
+            1.13 1.13 1.12 1.12 0 0 0-1.13-1.13z"/>
+          </svg>
+        </a>
+
+        <a href="#" style="color: #f5eee6; text-decoration: none; display: inline-flex; align-items: center;"  aria-label="Facebook">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22 12A10 10 0 1 0 
+            10.08 21.94v-6.29h-2.28V12h2.28V9.65c0-2.26 
+            1.35-3.51 3.42-3.51.99 0 
+            2.03.18 2.03.18v2.24h-1.14c-1.13 0-1.48.7-1.48 
+            1.42V12h2.52l-.4 
+            3.65h-2.12v6.29A10 10 0 0 0 22 12z"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+    <hr class="mb-4" />
+    <div class="text-center">
+      &copy; 2025 The Cozy Corner. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
