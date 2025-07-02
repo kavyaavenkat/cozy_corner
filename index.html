@@ -128,32 +128,81 @@
     </style>
 </head>
 <body>
-<header>
-    <img src="https://marketplace.canva.com/EAFwZMLu0Wc/1/0/1600w/canva-brown-and-white-minimalist-elegant-simple-home-decor-company-logo-onurdR-QAyo.jpg" alt="logo" height="50px" width="100px"/>
-    <h1>The Cozy Corner</h1>
-    <nav><a href="about.html">
-         <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" fill="currentColor">
-  <path d="M11 7h2v2h-2zm0 4h2v6h-2z"/>
-  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 
-    18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-</svg>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top px-4 py-3" style="background-color: #6d4c41;">
+  <div class="container-fluid">
 
-    About Us</a>
-    <a href="products.html">
-        <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M16 6V4H8v2H2v2h2v12h16V8h2V6h-6zM6 18V8h12v10H6z"/>
-    </svg> Products</a>
-    <a href="sale.html">
-        <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M21 7H7v2h14V7zM7 13h14v-2H7v2zm0 4h10v-2H7v2zM3 6h2v12H3z"/>
-    </svg> Sale</a>
-    <a id="loginLink">
-        <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 2c-2.66 0-8 1.34-8 4v2h16v-2c0-2.66-5.34-4-8-4z"/>
-    </svg>Login</a>
-    </nav>
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="https://marketplace.canva.com/EAFwZMLu0Wc/1/0/1600w/canva-brown-and-white-minimalist-elegant-simple-home-decor-company-logo-onurdR-QAyo.jpg" alt="logo" height="50" class="me-2">
+      <span class="fs-4 fw-bold">The Cozy Corner</span>
+    </a>
 
-</header>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#cozyNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  
+    <div class="collapse navbar-collapse" id="cozyNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+        
+        
+        <li class="nav-item me-2">
+          <input class="form-control" type="text" placeholder="Search">
+        </li>
+        <li class="nav-item me-2">
+          <button class="btn btn-outline-light px-2">
+         
+            <svg fill="white" width="16" height="16" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1458.948 1305.626c104.637-136.95 167.527-307.187 167.527-492.388C1626.475 364.764 1261.711 0 813.238 0 364.764 0 0 364.764 0 813.238c0 448.473 364.764 813.237 813.238 813.237 185.201 0 355.547-62.89 492.496-167.527L1766.678 1920 1920 1766.678l-461.052-461.052Zm-645.71 103.986c-328.874 0-596.375-267.61-596.375-596.374 0-328.765 267.501-596.375 596.375-596.375 328.873 0 596.374 267.61 596.374 596.375s-267.501 596.374-596.374 596.374Z"/>
+            </svg>
+          </button>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">
+            <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" viewBox="0 0 24 24" class="me-1">
+              <path d="M11 7h2v2h-2zm0 4h2v6h-2z"/>
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 
+              18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+            </svg>
+            About Us
+          </a>
+        </li>
+
+     
+        <li class="nav-item">
+          <a class="nav-link" href="products.html">
+            <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" viewBox="0 0 24 24" class="me-1">
+              <path d="M16 6V4H8v2H2v2h2v12h16V8h2V6h-6zM6 18V8h12v10H6z"/>
+            </svg>
+            Products
+          </a>
+        </li>
+
+       
+        <li class="nav-item">
+          <a class="nav-link" href="sale.html">
+            <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" viewBox="0 0 24 24" class="me-1">
+              <path d="M21 7H7v2h14V7zM7 13h14v-2H7v2zm0 4h10v-2H7v2zM3 6h2v12H3z"/>
+            </svg>
+            Sale
+          </a>
+        </li>
+
+        
+        <li class="nav-item">
+          <a class="nav-link" id="loginLink">
+            <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" viewBox="0 0 24 24" class="me-1">
+              <path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 
+              2c-2.66 0-8 1.34-8 4v2h16v-2c0-2.66-5.34-4-8-4z"/>
+            </svg>
+            Login
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
 
 
 <section class="welcome">
