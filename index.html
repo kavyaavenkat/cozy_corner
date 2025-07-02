@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cozy corner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+           padding: 0;
+          background-color: #f5eee6;
+        }
+        header{
+            background: linear-gradient(to center, #8d6e63, #6d4c41);
+            position:sticky;
+            top:0;
+            background-color: #8d6e63;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 40px;
+        
+              }
+        header h1 {
+          color: #3e2723;             
+          font-size: 42px;           
+          font-weight: 700; 
+          text-align: center;           
+          letter-spacing: 2px;        
+          text-shadow: 1px 1px 2px rgba(0,0,0,0.1);  
+          font-family: 'Georgia', serif;
+          text-transform: uppercase; 
+          position: absolute;
+          left:150px;
+        }
+
+        header img{
+        height:80px;
+        width:auto;
+
+        }
+    nav a{
+        margin-left : 20px;
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        padding: 8px 2px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+    nav a:hover {
+     background-color:#5d4037 ;
+     color: white;
+    }
+    section h2, section p{
+        text-align: center;   
+    }
+    .welcome{
+         background-color: linen;
+         padding: 40px 20px;
+    }
+    .welcome h2 {
+         font-size: 32px;
+         color: darkslategray;
+          }
+    .welcome p {
+      
+       font-size: 18px;
+       color: dimgray;
+          }
+
+
+    section div{
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 20px;
+          padding: 80px 50px;
+          background-color: #f5f5f5;
+        
+
+    }
+    .feature div {
+  background-color: white;
+  padding: 15px 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  
+}
+.feature div:hover {
+  transform: scale(1.03);
+}
+.feature p,.feature h3{
+    padding: 40px 20px;
+    color: #5c504a;
+}
+
+    section img{
+        width: 100%;
+        height:180px;
+
+        object-fit: cover;
+         border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    section a{
+        
+        background-color: seagreen;
+        color: white;
+        text-decoration: none;
+
+    }
+    footer{
+        background-color: #4e342e;
+        color: #f5eee6;
+        text-align: center;
+        margin-top: 40px;
+        padding: 15px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    </style>
+</head>
+<body>
+<header>
+    <img src="https://marketplace.canva.com/EAFwZMLu0Wc/1/0/1600w/canva-brown-and-white-minimalist-elegant-simple-home-decor-company-logo-onurdR-QAyo.jpg" alt="logo" height="50px" width="100px"/>
+    <h1>The Cozy Corner</h1>
+    <nav><a href="about.html">
+         <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" fill="currentColor">
+  <path d="M11 7h2v2h-2zm0 4h2v6h-2z"/>
+  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 
+    18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+</svg>
+
+    About Us</a>
+    <a href="products.html">
+        <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M16 6V4H8v2H2v2h2v12h16V8h2V6h-6zM6 18V8h12v10H6z"/>
+    </svg> Products</a>
+    <a href="sale.html">
+        <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M21 7H7v2h14V7zM7 13h14v-2H7v2zm0 4h10v-2H7v2zM3 6h2v12H3z"/>
+    </svg> Sale</a>
+    <a id="loginLink">
+        <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 2c-2.66 0-8 1.34-8 4v2h16v-2c0-2.66-5.34-4-8-4z"/>
+    </svg>Login</a>
+    </nav>
+
+</header>
+
+
+<section class="welcome">
+    <h2>Style Meets Comfort at The Cozy Corner  </h2>
+    <p>Explore our curated furniture collections that bring warmth, beauty, and function to every corner of your home.</p>
+
+</section>
+<section class="feature">
+    <h2>Featured Products</h2>
+   <div> <img src="https://mysleepyhead.com/media/catalog/product/4/t/4thaug_2ndhalf5934_green.jpg"/>
+    <h3>Modern Sofa</h3>
+    <p>Choose from 3-seater, L-shaped, or recliner models — all designed for comfort and style.</p>
+ 
+    </div>
+    <div> <img src="https://cdn.decornation.in/wp-content/uploads/2020/07/modern-dining-table-chairs.jpg"/>
+    <h3>Dining Chair</h3>
+    <p>Available in wood, cushion-top, and velvet finishes — fits any dining setup beautifully.</p>
+ 
+    </div>
+    <div> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_yIo7WmO9_ewTri99oMtEMDs-7GBdwQNEWg&s"/>
+    <h3>Coffee table</h3>
+    <p>Choose round, rectangle, or lift-top storage tables — perfect for any living room.</p>
+    
+    </div>
+</section>
+<footer>
+    <p>© 2025 The Cozy Corner. All rights reserved.</p>
+    <p><svg height=16 width=16 fill="currentcolor" style="vertical-align:middle" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.0376 5.31617L10.6866 6.4791C11.2723 7.52858 11.0372 8.90532 10.1147 9.8278C10.1147 9.8278 10.1147 9.8278 10.1147 9.8278C10.1146 9.82792 8.99588 10.9468 11.0245 12.9755C13.0525 15.0035 14.1714 13.8861 14.1722 13.8853C14.1722 13.8853 14.1722 13.8853 14.1722 13.8853C15.0947 12.9628 16.4714 12.7277 17.5209 13.3134L18.6838 13.9624C20.2686 14.8468 20.4557 17.0692 19.0628 18.4622C18.2258 19.2992 17.2004 19.9505 16.0669 19.9934C14.1588 20.0658 10.9183 19.5829 7.6677 16.3323C4.41713 13.0817 3.93421 9.84122 4.00655 7.93309C4.04952 6.7996 4.7008 5.77423 5.53781 4.93723C6.93076 3.54428 9.15317 3.73144 10.0376 5.31617Z" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> </g></svg>
+        Contact: 9876543210</p>
+    
+</footer>
+
+</body>
+<script>
+  const user=localStorage.getItem("User");
+  const loginLink = document.getElementById("loginLink");
+  if(user){
+    loginLink.textContent = "Hi, "+ user + "  Logout";
+ loginLink.style.cursor="pointer";
+ loginLink.addEventListener("click",()=>
+ {
+  localStorage.removeItem("User");
+  location.reload();
+ });
+    
+    
+  }
+  else{
+    loginLink.textContent="Login";
+  loginLink.style.cursor = "pointer";
+ 
+    loginLink.addEventListener("click",()=>
+ {
+  
+    window.location.href="login.html";
+  });
+}
+</script>
+</html>
