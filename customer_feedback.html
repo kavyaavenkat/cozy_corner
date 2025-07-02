@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Feedback - The Cozy Corner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        /* Existing styles from index (2).html */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5eee6;
+        }
+
+        /* Styles for the navigation bar */
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 8px 2px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #5d4037;
+            color: white;
+        }
+
+        nav input[type="text"] {
+            padding: 8px 10px;
+            width: 200px;
+        }
+
+        nav button {
+            background-color: #5d4037;
+            justify-content: center;
+            align-items: center;
+            padding: 6px 8px;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        nav button svg {
+            height: 16px;
+            width: 16px;
+            fill: white;
+        }
+
+        /* Custom styles for the feedback page */
+        .feedback-section {
+            background-color: #f8f9fa; /* Light background for the section */
+            padding: 50px 0;
+        }
+
+        .feedback-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+            background-color: #ffffff; /* White background for cards */
+        }
+
+        .feedback-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feedback-card .card-header {
+            background-color: #6d4c41; /* Darker header color */
+            color: white;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            font-weight: bold;
+            padding: 1rem 1.25rem;
+        }
+
+        .feedback-card .card-body {
+            padding: 1.5rem;
+        }
+
+        .feedback-card .card-title {
+            color: #5d4037; /* Accent color for titles */
+            margin-bottom: 0.5rem;
+        }
+
+        .rating .star {
+            color: #ffc107; /* Gold color for stars */
+            font-size: 1.2rem;
+        }
+
+        .feedback-form-section {
+            background-color: #f5eee6; /* Match body background */
+            padding: 50px 0;
+        }
+
+        .feedback-form-card {
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            padding: 30px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #5d4037;
+        }
+
+        .form-control:focus {
+            border-color: #5d4037;
+            box-shadow: 0 0 0 0.25rem rgba(93, 64, 55, 0.25);
+        }
+
+        .btn-submit-feedback {
+            background-color: #5d4037;
+            border-color: #5d4037;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit-feedback:hover {
+            background-color: #4e342e;
+            border-color: #4e342e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark sticky-top px-4 py-3" style="background-color: #6d4c41;">
+  <div class="container-fluid">
+
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="https://marketplace.canva.com/EAFwZMLu0Wc/1/0/1600w/canva-brown-and-white-minimalist-elegant-simple-home-decor-company-logo-onurdR-QAyo.jpg" alt="logo" height="50" class="me-2">
+      <span class="fs-4 fw-bold">The Cozy Corner</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#cozyNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="cozyNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+        
+        <!-- Search Bar -->
+        <li class="nav-item me-2">
+          <input class="form-control" type="text" placeholder="Search">
+        </li>
+        <li class="nav-item me-2">
+          <button class="btn btn-outline-light px-2">
+            <svg fill="white" width="16" height="16" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1458.948 1305.626c104.637-136.95 167.527-307.187 167.527-492.388C1626.475 364.764 1261.711 0 813.238 0 364.764 0 0 364.764 0 813.238c0 448.473 364.764 813.237 813.238 813.237 185.201 0 355.547-62.89 492.496-167.527L1766.678 1920 1920 1766.678l-461.052-461.052Zm-645.71 103.986c-328.874 0-596.375-267.61-596.375-596.374 0-328.765 267.501-596.375 596.375-596.375 328.873 0 596.374 267.61 596.374 596.375s-267.501 596.374-596.374 596.374Z"/>
+            </svg>
+          </button>
+        </li>
+
+        <!-- About Us -->
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">
+            <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" viewBox="0 0 24 24" class="me-1">
+              <path d="M11 7h2v2h-2zm0 4h2v6h-2z"/>
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 
+              18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+            </svg>
+            About Us
+          </a>
+        </li>
+
+        <!-- Products -->
+        <li class="nav-item">
+          <a class="nav-link" href="products.html">
+            <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" viewBox="0 0 24 24" class="me-1">
+              <path d="M16 6V4H8v2H2v2h2v12h16V8h2V6h-6zM6 18V8h12v10H6z"/>
+            </svg>
+            Products
+          </a>
+        </li>
+
+        <!-- Sale -->
+        <li class="nav-item">
+          <a class="nav-link" href="sale.html">
+            <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" viewBox="0 0 24 24" class="me-1">
+              <path d="M21 7H7v2h14V7zM7 13h14v-2H7v2zm0 4h10v-2H7v2zM3 6h2v12H3z"/>
+            </svg>
+            Sale
+          </a>
+        </li>
+
+       <li class="nav-item">
+  <a class="nav-link" href="contact_us.html">
+    <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" viewBox="0 0 24 24" class="me-1">
+      <path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.21c1.21.49 2.53.76 3.88.76.55 0 1 .45 1 1V20a1 1 0 0 1-1 1c-9.39 0-17-7.61-17-17a1 1 0 0 1 1-1h3.5c.55 0 1 .45 1 1 0 1.35.27 2.67.76 3.88a1 1 0 0 1-.21 1.11l-2.2 2.2z"/>
+    </svg>
+    Contact
+  </a>
+</li>
+
+        <!-- Login -->
+        <li class="nav-item">
+          <a class="nav-link" id="loginLink">
+            <svg xmlns="http://www.w3.org/2000/svg" height="16" fill="currentColor" viewBox="0 0 24 24" class="me-1">
+              <path d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4zm0 
+              2c-2.66 0-8 1.34-8 4v2h16v-2c0-2.66-5.34-4-8-4z"/>
+            </svg>
+            Login
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+    <main>
+        <section class="feedback-section">
+            <div class="container">
+                <h2 class="text-center mb-5" style="color: #5d4037;">What Our Customers Say</h2>
+                <div class="row g-4 justify-content-center">
+                    <!-- Sample Feedback Card 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card feedback-card h-100">
+                            <div class="card-header">
+                                Harika V.
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Absolutely Love My New Sofa!</h5>
+                                <div class="rating mb-2">
+                                    <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+                                </div>
+                                <p class="card-text">"The 'Cozy Cloud' sofa is even more comfortable than I imagined. The delivery was quick, and the quality is superb. It perfectly fits my living room aesthetic. Highly recommend The Cozy Corner!"</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sample Feedback Card 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card feedback-card h-100">
+                            <div class="card-header">
+                                Jahnavi N.
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Great Dining Set and Service</h5>
+                                <div class="rating mb-2">
+                                    <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9734;</span>
+                                </div>
+                                <p class="card-text">"We purchased a dining table and chairs, and they look fantastic. One chair had a minor scuff, but customer service was quick to resolve it. Very happy with the overall experience."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sample Feedback Card 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card feedback-card h-100">
+                            <div class="card-header">
+                                Vamsi N.
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Stylish and Functional Coffee Table</h5>
+                                <div class="rating mb-2">
+                                    <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span>
+                                </div>
+                                <p class="card-text">"The lift-top coffee table is a game-changer for my small apartment. It's sturdy, looks elegant, and provides much-needed storage. Excellent product from Cozy Corner!"</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sample Feedback Card 4 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card feedback-card h-100">
+                            <div class="card-header">
+                                 Sravani R.
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Comfortable and Durable Armchair</h5>
+                                <div class="rating mb-2">
+                                    <span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9733;</span><span class="star">&#9734;</span>
+                                </div>
+                                <p class="card-text">"My new armchair is very comfortable and seems quite durable. The color was slightly different than expected from the website, but still works well. Good value for money."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feedback-form-section">
+            <div class="container">
+                <h2 class="text-center mb-5" style="color: #5d4037;">Share Your Experience</h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10">
+                        <div class="feedback-form-card">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="customerName" class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" id="customerName" placeholder="Enter your name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="customerEmail" class="form-label">Your Email (Optional)</label>
+                                    <input type="email" class="form-control" id="customerEmail" placeholder="Enter your email">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Overall Rating</label>
+                                    <div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="rating" id="rating5" value="5" required>
+                                            <label class="form-check-label" for="rating5">5 Stars &#9733;&#9733;&#9733;&#9733;&#9733;</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="rating" id="rating4" value="4">
+                                            <label class="form-check-label" for="rating4">4 Stars &#9733;&#9733;&#9733;&#9733;&#9734;</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="rating" id="rating3" value="3">
+                                            <label class="form-check-label" for="rating3">3 Stars &#9733;&#9733;&#9733;&#9734;&#9734;</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="rating" id="rating2" value="2">
+                                            <label class="form-check-label" for="rating2">2 Stars &#9733;&#9733;&#9734;&#9734;&#9734;</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="rating" id="rating1" value="1">
+                                            <label class="form-check-label" for="rating1">1 Star &#9733;&#9734;&#9734;&#9734;&#9734;</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="feedbackMessage" class="form-label">Your Feedback</label>
+                                    <textarea class="form-control" id="feedbackMessage" rows="5" placeholder="Tell us about your experience..." required></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-submit-feedback">Submit Feedback</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer - Copied from index (2).html -->
+    <footer class="text-white pt-5 pb-4" style="background-color: #6d4c41;">
+        <div class="container text-center text-md-start">
+            <div class="row">
+                <!-- Brand -->
+                <div class="col-md-4 col-lg-4 col-xl-3 mx-auto mb-4">
+                    <h5 class="text-uppercase fw-bold mb-3">The Cozy Corner</h5>
+                    <p>Style meets comfort — handpicked furniture to make your house a home.</p>
+                </div>
+                <!-- Contact -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-3">Contact</h6>
+                    <p>
+                        <svg width="18" height="18" fill="currentColor" class="me-2" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79a15.464 15.464 0 0 0 6.59 6.59l2.2-2.2a1.003 1.003 0 0 1 1.11-.21c1.21.49 2.53.76 3.88.76.55 0 1 .45 1 1V20a1 1 0 0 1-1 1c-9.39 0-17-7.61-17-17a1 1 0 0 1 1-1h3.5c.55 0 1 .45 1 1 0 1.35.27 2.67.76 3.88a1.003 1.003 0 0 1-.21 1.11l-2.2 2.2z"/>
+                        </svg>
+                        9876543210
+                    </p>
+                    <p>
+                        <svg width="18" height="18" fill="currentColor" class="me-2" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8l8 5 8-5v10H4z"/>
+                        </svg>
+                        support@cozycorner.com
+                    </p>
+                    <p>
+                        <svg width="18" height="18" fill="currentColor" class="me-2" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5 14.5 7.62 14.5 9 13.38 11.5 12 11.5z"/>
+                        </svg>
+                        Chennai, India
+                    </p>
+                </div>
+                <!-- Links -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-3">Quick Links</h6>
+                    <p><a href="about.html" class="text-white text-decoration-none">About Us</a></p>
+                    <p><a href="products.html" class="text-white text-decoration-none">Products</a></p>
+                    <p><a href="sale.html" class="text-white text-decoration-none">Sale</a></p>
+                </div>
+                <!-- Social -->
+                <div class="col-md-2 col-lg-3 col-xl-3 mx-auto mb-4">
+                    <h6 class="text-uppercase fw-bold mb-3">Follow Us</h6>
+                    <a href="#" style="color: #f5eee6; text-decoration: none; display: inline-flex; align-items: center;" aria-label="Instagram">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M7.5 2C4.46 2 2 4.46 2 7.5v9C2 19.54 4.46 22 7.5 22h9c3.04 0 5.5-2.46 5.5-5.5v-9C22 4.46 19.54 2 16.5 2h-9zM12 7.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5zm0 7.5a3 3 0 1 0-3-3 3 3 0 0 0 3 3zm5.25-7.88a1.12 1.12 0 1 0 1.13 1.13 1.12 1.12 0 0 0-1.13-1.13z"/>
+                        </svg>
+                    </a>
+                    <a href="#" style="color: #f5eee6; text-decoration: none; display: inline-flex; align-items: center;" aria-label="Facebook">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22 12A10 10 0 1 0 10.08 21.94v-6.29h-2.28V12h2.28V9.65c0-2.26 1.35-3.51 3.42-3.51.99 0 2.03.18 2.03.18v2.24h-1.14c-1.13 0-1.48.7-1.48 1.42V12h2.52l-.4 3.65h-2.12v6.29A10 10 0 0 0 22 12z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <hr class="mb-4" />
+            <div class="text-center">
+                &copy; 2025 The Cozy Corner. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Login/Logout functionality - Copied from index (2).html
+        const user = localStorage.getItem("User");
+        const loginLink = document.getElementById("loginLink");
+        if (user) {
+            loginLink.textContent = "Hi, " + user + " Logout";
+            loginLink.style.cursor = "pointer";
+            loginLink.addEventListener("click", () => {
+                localStorage.removeItem("User");
+                location.reload();
+            });
+        } else {
+            loginLink.textContent = "Login";
+            loginLink.style.cursor = "pointer";
+            loginLink.addEventListener("click", () => {
+                window.location.href = "login.html";
+            });
+        }
+
+        // Basic form submission handling (for demonstration)
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // You would typically send this data to a server
+            const customerName = document.getElementById('customerName').value;
+            const customerEmail = document.getElementById('customerEmail').value;
+            const rating = document.querySelector('input[name="rating"]:checked')?.value;
+            const feedbackMessage = document.getElementById('feedbackMessage').value;
+
+            if (customerName && rating && feedbackMessage) {
+                // In a real application, you'd send this to a backend database
+                console.log("New Feedback Submitted:");
+                console.log("Name:", customerName);
+                console.log("Email:", customerEmail);
+                console.log("Rating:", rating);
+                console.log("Message:", feedbackMessage);
+
+                alert("Thank you for your feedback, " + customerName + "!"); // Using alert for demo, replace with custom modal
+                this.reset(); // Clear the form
+            } else {
+                alert("Please fill in all required fields (Name, Rating, Feedback Message)."); // Using alert for demo
+            }
+        });
+    </script>
+</body>
+</html>
