@@ -13,7 +13,18 @@
            padding: 0;
           background-color: #f5eee6;
         }
-      
+      #cozyCarousel {
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+#cozyCarousel .carousel-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+
     nav a{
         margin-left : 20px;
         text-decoration: none;
@@ -27,12 +38,28 @@
      background-color:#5d4037 ;
      color: white;
     }
-    section h2, section p{
-        text-align: center;   
+    nav input[type="text"]{
+      padding: 8px 10px;
+      width: 200px;
     }
+    nav button {
+  background-color: #5d4037;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 8px;
+  cursor:pointer;
+  border-radius: 6px;
+    }
+    nav button svg{
+      height: 16px;
+      width:16px;
+      fill: white;
+    }
+   
     .welcome{
          background-color: linen;
          padding: 40px 20px;
+         text-align: center;
     }
     .welcome h2 {
          font-size: 32px;
@@ -45,62 +72,21 @@
           }
 
 
-    section div{
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 20px;
-          padding: 80px 50px;
-          background-color: #f5f5f5;
-        
 
-    }
-    .feature div {
-  background-color: white;
-  padding: 15px 20px;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  
-}
-.feature div:hover {
-  transform: scale(1.03);
-}
-.feature p,.feature h3{
-    padding: 40px 20px;
-    color: #5c504a;
-}
 
     section img{
-        width: 100%;
-        height:180px;
-
+        width: auto;
+        height:300px;
         object-fit: cover;
-         border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-
-    section a{
-        
-        background-color: seagreen;
-        color: white;
-        text-decoration: none;
-
-    }
-    footer{
-        background-color: #4e342e;
-        color: #f5eee6;
-        text-align: center;
-        margin-top: 40px;
-        padding: 15px;
-        display: flex;
-        justify-content: space-evenly;
-    }
+    
 
     </style>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top px-4 py-3" style="background-color: #6d4c41;">
+<body id="top">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top px-4 py-3" style="background-color: #6d4c41;" >
   <div class="container-fluid">
 
     <a class="navbar-brand d-flex align-items-center" href="index.html">
@@ -176,30 +162,251 @@
   </div>
 </nav>
 
+<div id="cozyCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#cozyCarousel" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#cozyCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#cozyCarousel" data-bs-slide-to="2"></button>
+  </div>
+  <div class="carousel-inner rounded shadow">
+    <div class="carousel-item active">
+      <img src="https://www.sofasbysaxon.com/get-inspired/wp-content/uploads/2023/09/1500894005Grosvenor.jpg" class="d-block w-100" alt="Sofa Image">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+        <h5>Cozy Sofas</h5>
+        <p>Modern designs for the comfiest living rooms.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.buonafurniture.ca/wp-content/uploads/2021/07/Exclusive-131-Gold-Marble-Dining_full_1.jpg" class="d-block w-100" alt="Dining Image">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+        <h5>Elegant Dining</h5>
+        <p>Stylish tables for your perfect dinners.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://assets.nickscali.com/media/catalog/product/cache/cbdcdb92c76a5919d24cc3e60ff4de09/1/9/1920x1200px_202109_colonna_coffee_table_round_140cm_0246.jpg" class="d-block w-100" alt="Coffee Table">
+      <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded">
+        <h5>Smart Coffee Tables</h5>
+        <p>Lift-top and storage-friendly options available.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#cozyCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#cozyCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+<!-- ========== Features Bar ========== -->
+<section class="container py-5 border-bottom">
+  <div class="row text-center">
+    <div class="col-md-4">
+      <img src="https://mysleepyhead.com/media/wysiwyg/Group_9256.png?auto=webp&format=png&quality=85" alt="Free Shipping" style="height:40px;">
+      <h6 class="fw-bold mt-2">FREE SHIPPING</h6>
+      <p class="text-muted small">Free shipping for all orders</p>
+    </div>
+    <div class="col-md-4">
+      <img src="https://img.icons8.com/fluency/48/replay.png" alt="Easy Returns" style="height:40px;">
+      <h6 class="fw-bold mt-2">EASY RETURNS</h6>
+      <p class="text-muted small">Returns made easy peasy</p>
+    </div>
+    <div class="col-md-4">
+      <img src="https://mysleepyhead.com/media/wysiwyg/Path_11397_1.png?auto=webp&format=png&quality=85" alt="Best Price Guarantee" style="height:40px;">
+      <h6 class="fw-bold mt-2">BEST PRICE GUARANTEE</h6>
+      <p class="text-muted small">Our products are lower than retail</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Top Categories ========== -->
+<section class="container text-center py-5">
+  <h3 class="mb-4">Top Categories</h3>
+  <div class="row justify-content-center g-4">
+    
+    <!-- Beds -->
+    <div class="col-4 col-md-2">
+      <a href="products.html" class="text-decoration-none text-dark">
+        <img src="https://mysleepyhead.com/media/.renditions/wysiwyg/Beds.jpg?auto=webp&format=pjpg&quality=85" class="img-fluid rounded-circle mb-2" alt="Beds">
+        <p class="fw-semibold">Beds</p>
+      </a>
+    </div>
+
+    <!-- Sofas -->
+    <div class="col-4 col-md-2">
+      <a href="products.html" class="text-decoration-none text-dark">
+        <img src="https://mysleepyhead.com/media/catalog/category/Sleepy-head_day522963.jpg" class="img-fluid rounded-circle mb-2" alt="Sofas">
+        <p class="fw-semibold">Sofas</p>
+      </a>
+    </div>
+
+    <!-- Sofabeds -->
+    <div class="col-4 col-md-2">
+      <a href="products.html" class="text-decoration-none text-dark">
+        <img src="https://mysleepyhead.com/media/.renditions/wysiwyg/Sofabed_1.jpg?auto=webp&format=pjpg&quality=85" class="img-fluid rounded-circle mb-2" alt="Sofabeds">
+        <p class="fw-semibold">Sofabeds</p>
+      </a>
+    </div>
+
+    <!-- Recliners -->
+    <div class="col-4 col-md-2">
+      <a href="products.html" class="text-decoration-none text-dark">
+        <img src="https://mysleepyhead.com/media/.renditions/wysiwyg/Recliner.jpg?auto=webp&format=pjpg&quality=85" class="img-fluid rounded-circle mb-2" alt="Recliners">
+        <p class="fw-semibold">Recliners</p>
+      </a>
+    </div>
+
+    <!-- Tables -->
+    <div class="col-4 col-md-2">
+      <a href="products.html" class="text-decoration-none text-dark">
+        <img src="https://mysleepyhead.com/media/.renditions/wysiwyg/Tables.jpg?auto=webp&format=pjpg&quality=85" class="img-fluid rounded-circle mb-2" alt="Tables">
+        <p class="fw-semibold">Tables</p>
+      </a>
+    </div>
+
+    <!-- Furnishings -->
+    <div class="col-4 col-md-2">
+      <a href="products.html" class="text-decoration-none text-dark">
+        <img src="https://mysleepyhead.com/media/.renditions/wysiwyg/Home-furnishing.jpg?auto=webp&format=pjpg&quality=85" class="img-fluid rounded-circle mb-2" alt="Furnishings">
+        <p class="fw-semibold">Furnishings</p>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
 
 <section class="welcome">
     <h2>Style Meets Comfort at The Cozy Corner  </h2>
     <p>Explore our curated furniture collections that bring warmth, beauty, and function to every corner of your home.</p>
 
 </section>
-<section class="feature">
-    <h2>Featured Products</h2>
-   <div> <img src="https://mysleepyhead.com/media/catalog/product/4/t/4thaug_2ndhalf5934_green.jpg"/>
-    <h3>Modern Sofa</h3>
-    <p>Choose from 3-seater, L-shaped, or recliner models — all designed for comfort and style.</p>
- 
-    </div>
-    <div> <img src="https://cdn.decornation.in/wp-content/uploads/2020/07/modern-dining-table-chairs.jpg"/>
-    <h3>Dining Chair</h3>
-    <p>Available in wood, cushion-top, and velvet finishes — fits any dining setup beautifully.</p>
- 
-    </div>
-    <div> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_yIo7WmO9_ewTri99oMtEMDs-7GBdwQNEWg&s"/>
-    <h3>Coffee table</h3>
-    <p>Choose round, rectangle, or lift-top storage tables — perfect for any living room.</p>
+
+<section class="container my-5">
+  <h2 class="mb-4">Featured Products</h2>
+  <div class="text-center row g-4">
     
+    
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="https://mysleepyhead.com/media/catalog/product/4/t/4thaug_2ndhalf5934_green.jpg" class="card-img-top" alt="Modern Sofa">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Modern Sofa</h5>
+          <p class="card-text">Choose from 3-seater, L-shaped, or recliner models — all designed for comfort and style.</p>
+          <a href="products.html" class="btn btn-outline-primary mt-auto">Know More</a>
+        </div>
+      </div>
     </div>
+
+    
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="https://cdn.decornation.in/wp-content/uploads/2020/07/modern-dining-table-chairs.jpg" class="card-img-top" alt="Dining Chair">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Dining Chair</h5>
+          <p class="card-text">Available in wood, cushion-top, and velvet finishes — fits any dining setup beautifully.</p>
+          <a href="products.html" class="btn btn-outline-primary mt-auto">Know More</a>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_yIo7WmO9_ewTri99oMtEMDs-7GBdwQNEWg&s" class="card-img-top" alt="Coffee Table">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Coffee Table</h5>
+          <p class="card-text">Choose round, rectangle, or lift-top storage tables — perfect for any living room.</p>
+          <a href="products.html" class="btn btn-outline-primary mt-auto">Know More</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
+
+<section class="container my-5">
+  <h2 class="mb-4">Frequently Asked Questions</h2>
+  
+  <div class="accordion" id="faqAccordion">
+
+    <!-- FAQ 1 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+          What payment methods do you accept?
+        </button>
+      </h2>
+      <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          We accept all major credit/debit cards, UPI, net banking, and cash on delivery for selected pin codes.
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 2 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+          Can I return or exchange a product?
+        </button>
+      </h2>
+      <div id="faq2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Yes, we have a 7-day easy return/exchange policy. Please check our return policy page for more details.
+        </div>
+      </div>
+    </div>
+         <!-- FAQ 4 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+          How can I track my order?
+        </button>
+      </h2>
+      <div id="faq4" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          After placing your order, you'll receive a tracking link via SMS and email. You can also track your order from your account dashboard.
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 5 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFive">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+          Do you provide assembly services?
+        </button>
+      </h2>
+      <div id="faq5" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Yes, for products that require assembly, we provide professional installation at no additional cost in select cities.
+        </div>
+      </div>
+    </div>
+    <!-- FAQ 3 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+          Do you offer free shipping?
+        </button>
+      </h2>
+      <div id="faq3" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+        <div class="accordion-body">
+          Yes, we offer free standard shipping on all orders above ₹999.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<a href="#top" class="btn btn-secondary position-fixed bottom-0 end-0 m-4 rounded-circle" style="width: 50px; height: 50px; font-size: 24px; display: flex;  center; justify-content: center;">
+  ↑
+</a>
+
+
 <footer class="text-white pt-5 pb-4" style="background-color: #6d4c41;">
   <div class="container text-center text-md-start">
     <div class="row">
@@ -293,6 +500,8 @@
     </div>
   </div>
 </footer>
+
+
 
 </body>
 <script>
